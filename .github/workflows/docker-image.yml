@@ -19,6 +19,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref :'v0.5.4.0'
         
       - run: rm Gemfile.lock
       
