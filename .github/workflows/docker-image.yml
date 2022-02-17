@@ -18,11 +18,13 @@ jobs:
           repository: ${{ github.repository }}
 
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref :'v0.5.4.0'
+        uses: actions/checkout@v1        
         
-      - run: rm Gemfile.lock
+      - name: Checkout tag
+        run: git checkout v0.5.4.0
+        
+      - name: Remove Gemfile
+        run: rm Gemfile.lock
       
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
