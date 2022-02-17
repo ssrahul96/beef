@@ -11,7 +11,7 @@ jobs:
     steps:
       
       - name: Remove gemfile
-        run: rm Gemfile.lock
+        run: "[ -e Gemfile.lock ] && rm Gemfile.lock"
         
       - name: Login to Github Registry
         uses: docker/login-action@v1
